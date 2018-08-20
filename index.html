@@ -394,7 +394,7 @@
 <p>​    java内存区的一个经典分组是将内存区分为堆内存和栈内存，其中栈就是指现在讲的虚拟机栈，或者说是虚拟机栈中的局部变量表部分。</p>
 <p>​    执行引擎运行的所有字节码指令只针对当前栈帧进行操作，在概念模型上，典型的栈帧结构如图所示： </p>
 <p><img src="C:\Users\Eis\Desktop\java虚拟机栈.jpg" alt="java虚拟机栈"></p>
-<h3 id="局部变量表"><a href="#局部变量表" class="headerlink" title="局部变量表"></a>局部变量表</h3><p>​    它存放了编译器可知的各种基本数据类型（boolean,byte,char,short,int,float,long,double）、对象引用（reference类型，他不等同于对象本身，可能是一个指向对象起始地址的引用指针，也可能是指向一个代表对象的句柄或其他与此对象相关的位置）和returnAddress类型。</p>
+<h2 id="局部变量表"><a href="#局部变量表" class="headerlink" title="局部变量表"></a>局部变量表</h2><p>​    它存放了编译器可知的各种基本数据类型（boolean,byte,char,short,int,float,long,double）、对象引用（reference类型，他不等同于对象本身，可能是一个指向对象起始地址的引用指针，也可能是指向一个代表对象的句柄或其他与此对象相关的位置）和returnAddress类型。</p>
 <p>​    其中64位长度的long和double类型的数据会占用2个局部变量空间（Slot），其余的数据类型只占用一个。局部变量表所需的内存空间在编译期间完成分配，当进入一个方法时这个方法需要在帧中分配多大的局部变量空间是完全确定的，在方法运行期间不会改变局部变量表的大小。</p>
 <h3 id="抛出的异常"><a href="#抛出的异常" class="headerlink" title="抛出的异常"></a>抛出的异常</h3><p>​    java虚拟机规范中，对这个区域规定了两种异常状况：</p>
 <p>​    1.如果线程请求的栈深度大于虚拟机所允许的深度，将抛出StackOverflowError异常</p>
